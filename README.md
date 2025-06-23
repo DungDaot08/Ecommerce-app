@@ -86,3 +86,4 @@ This project was built using **React**, **TypeScript**, and **Tailwind CSS** to 
 
 The final app is modular, efficient, and scalable. It follows React best practices, is responsive, and handles hundreds of items with fast performance — all while maintaining a clean and user-friendly UI.
 
+Link: https://ecommerce-app-simple.netlify.app/

@@ -12,8 +12,10 @@ const Home: React.FC = () => {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
 
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [minPrice, setMinPrice] = useState<number>(0);
-  const [maxPrice, setMaxPrice] = useState<number>(1000);
+  //const [minPrice, setMinPrice] = useState<number>(0);
+  //const [maxPrice, setMaxPrice] = useState<number>(1000);
+  const [minPrice, setMinPrice] = useState<string>("0");
+  const [maxPrice, setMaxPrice] = useState<string>("1000");
   const [minRating, setMinRating] = useState<number>(0);
   const [sortOption, setSortOption] = useState<string>("default");
   const [searchTerm, setSearchTerm] = useState("");
@@ -40,7 +42,11 @@ const Home: React.FC = () => {
     let filtered = products.filter((product) => {
       const matchesCategory =
         selectedCategory === "all" || product.category === selectedCategory;
-      const matchesPrice = product.price >= minPrice && product.price <= maxPrice;
+      //const matchesPrice = product.price >= minPrice && product.price <= maxPrice;
+      const matchesPrice =
+        product.price >= parseFloat(minPrice || "0") &&
+        product.price <= parseFloat(maxPrice || "1000");
+
       const matchesRating = !product.rating || product.rating.rate >= minRating;
       const matchesSearch = product.title
         .toLowerCase()

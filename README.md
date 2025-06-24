@@ -14,6 +14,7 @@ Ensure you have **Node.js (v14 or higher)** and **npm** installed.
 ### 1. Clone the repo
 
 git clone https://github.com/yourusername/ecommerce-app.git
+
 cd ecommerce-app
 
 ### 2. Install dependencies
@@ -38,7 +39,7 @@ npm start
 
 🛒 Add to cart, update quantity, and remove products
 
-🧾 Cart total price and item count shown in header
+🧾 Cart total item count shown in header
 
 📱 Fully responsive design using Tailwind CSS
 

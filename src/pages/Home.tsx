@@ -26,7 +26,7 @@ const Home: React.FC = () => {
     load();
   }, []);
 
-  // ⏱️ Memoize filtered & sorted products
+  // Memoize filtered & sorted products
   const filteredProducts = useMemo(() => {
     let filtered = products.filter((product) => {
       const matchesCategory =
@@ -75,7 +75,7 @@ const Home: React.FC = () => {
     searchTerm,
   ]);
 
-  // ⏱️ Memoize paginated products
+  // Memoize paginated products
   const currentProducts = useMemo(() => {
     const indexOfLast = currentPage * productsPerPage;
     const indexOfFirst = indexOfLast - productsPerPage;
@@ -84,12 +84,12 @@ const Home: React.FC = () => {
 
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
-  // ✅ useCallback for pagination change
+  // useCallback for pagination change
   const handlePageChange = useCallback((page: number) => {
     setCurrentPage(page);
   }, []);
 
-  // 🧠 Derive categories from products
+  // Derive categories from products
   const categories = useMemo(
     () => ["all", ...new Set(products.map((p) => p.category))],
     [products]

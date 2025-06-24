@@ -16,7 +16,6 @@ const Pagination: React.FC<PaginationProps> = ({
   const createPageNumbers = () => {
     const pages: (number | "...")[] = [];
 
-    // Hiện tất cả nếu <= 7 trang
     if (totalPages <= 7) {
       for (let i = 1; i <= totalPages; i++) pages.push(i);
     } else {
@@ -36,7 +35,7 @@ const Pagination: React.FC<PaginationProps> = ({
 
   return (
     <div className="flex justify-center mt-6 flex-wrap gap-1">
-      {/* Nút Prev */}
+      {/* Prev */}
       <button
         onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
         disabled={currentPage === 1}
@@ -45,7 +44,7 @@ const Pagination: React.FC<PaginationProps> = ({
         « Prev
       </button>
 
-      {/* Các số trang */}
+      {/* Page number */}
       {pageNumbers.map((page, index) =>
         page === "..." ? (
           <span key={index} className="px-3 py-1">
@@ -66,7 +65,7 @@ const Pagination: React.FC<PaginationProps> = ({
         )
       )}
 
-      {/* Nút Next */}
+      {/* Next */}
       <button
         onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))}
         disabled={currentPage === totalPages}
